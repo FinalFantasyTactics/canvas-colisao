@@ -69,6 +69,7 @@ function update() {
 }
 
 function draw() {
+    ctx.clearRect(0, 0, cnv.width, cnv.height);
     ctx.fillRect(posX, posY, SIZE, SIZE);
 }
 
