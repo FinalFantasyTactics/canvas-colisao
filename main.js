@@ -28,6 +28,19 @@ function updateBlock() {
     }
 }
 
+function colide() {
+    if (
+            posX + SIZE > blockX         // colisão pela direita 
+            && posX < blockX + SIZE     // colisão pela esquerda
+            && posY + SIZE > blockY     // colisão por cima
+            && posY < blockY + SIZE     // colisão por baixo
+            ) {
+        objColor = "#f00";
+    } else {
+        objColor = "#00F00F";
+    }
+}
+
 // Captura o comando
 window.addEventListener("keydown", keydownHandler, false);
 window.addEventListener("keyup", keyupHandler, false);
@@ -70,6 +83,7 @@ function keyupHandler(e) {
 
 function update() {
     updateBlock();
+    colide();
 }
 
 function draw() {
